@@ -1,0 +1,42 @@
+Teste Funcional
+Testa se as funcionalidades principais estão funcionando como esperado.
+
+Exemplo 1 – Login:
+Entrada: Email e senha válidos
+Saída esperada: Acesso concedido e redirecionamento à tela inicial
+
+Entrada: Senha incorreta
+Saída esperada: Mensagem "Credenciais inválidas"
+
+Entrada: Campos em branco
+Saída esperada: Mensagem "Preencha todos os campos obrigatórios"
+
+Exemplo 2 – Fila Virtual:
+Entrada: Linha "Circular 1" selecionada, usuário autenticado
+Saída esperada: Mensagem "Você foi adicionado à fila. Posição: X"
+
+Entrada: Nenhuma linha selecionada
+Saída esperada: Mensagem "Selecione uma linha para continuar"
+
+Teste Não Funcional
+Testa aspectos como desempenho, compatibilidade, segurança e usabilidade.
+
+Exemplo 3 – Desempenho:
+Ação: Consulta de itinerários em horário de pico
+Resultado esperado: Tempo de resposta inferior a 3 segundos
+
+Exemplo 4 – Compatibilidade:
+Ação: Abrir o app em diferentes tamanhos de tela
+Resultado esperado: Interface adaptada corretamente em todos os dispositivos
+
+Exemplo 5 – Segurança:
+Ação: Acessar tela protegida sem login
+Resultado esperado: Redirecionamento automático para a tela de login
+
+Teste de Regressão
+Garante que atualizações no sistema não tenham causado falhas em funcionalidades que antes funcionavam corretamente.
+
+Exemplo 6 – Atualização da tela de login:
+Após atualização do layout, teste a funcionalidade de autenticação original
+Resultado esperado: Login continua funcionando como antes
+

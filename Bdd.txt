@@ -1,0 +1,83 @@
+História de Usuário:
+Como aluno, quero entrar na fila virtual de uma linha de transporte, para garantir meu lugar no próximo embarque.
+
+Funcionalidade: Entrada na fila virtual
+
+Cenário: Entrada bem-sucedida na fila
+Dado que o usuário está logado no sistema
+E tenha selecionado a linha "Circular 1"
+Quando ele confirmar a solicitação de embarque
+Então o sistema deve exibir a mensagem "Você foi adicionado à fila. Posição: X"
+E o sistema deve enviar uma notificação quando o veículo estiver se aproximando
+E se o usuário não se apresentar a tempo, ele deve ser removido da fila
+
+
+História de Usuário:
+Como aluno, quero visualizar a localização dos veículos em tempo real, para saber quando me dirigir ao ponto.
+
+Funcionalidade: Localização em tempo real
+
+Cenário: Visualização de localização com sucesso
+Dado que o usuário acessa a aba de localização no aplicativo
+Quando houver veículos disponíveis com localização ativa
+Então o mapa deve exibir a posição atual dos veículos em tempo real
+E o mapa deve permitir interações como zoom e movimentação
+
+Cenário: GPS indisponível
+Dado que o usuário acessa a aba de localização
+E o sistema não consiga obter o sinal GPS dos veículos
+Então o sistema deve exibir a mensagem "Sinal de localização indisponível"
+
+
+História de Usuário:
+Como aluno, quero consultar os itinerários e horários das linhas disponíveis, para planejar melhor meus deslocamentos.
+
+Funcionalidade: Consulta de itinerários
+
+Cenário: Consulta de linha disponível
+Dado que o usuário acessa a aba de itinerários
+Quando ele seleciona a linha "Circular 2"
+Então o sistema deve exibir o trajeto, paradas e horários previstos
+
+Cenário: Dados indisponíveis
+Dado que o usuário acessa a aba de itinerários
+Quando o sistema não conseguir carregar as informações
+Então deve ser exibida a mensagem "Erro ao carregar itinerário. Tente novamente mais tarde."
+
+
+História de Usuário:
+Como aluno, quero acessar minha conta com segurança, para utilizar os recursos do aplicativo.
+
+Funcionalidade: Login de usuário
+
+Cenário: Login válido
+Dado que o usuário está na tela de login
+Quando ele informa e-mail e senha válidos
+Então ele deve ser redirecionado para a tela inicial
+
+Cenário: Campos obrigatórios em branco
+Dado que o usuário está na tela de login
+Quando ele tenta autenticar sem preencher os campos
+Então o sistema deve exibir "Preencha todos os campos obrigatórios"
+
+Cenário: Senha incorreta
+Dado que o usuário está na tela de login
+Quando ele informa uma senha incorreta
+Então o sistema deve exibir a mensagem "Credenciais inválidas"
+
+
+História de Usuário:
+Como aluno, quero receber notificações quando meu transporte estiver próximo, para não perder o embarque.
+
+Funcionalidade: Notificações de embarque
+
+Cenário: Notificação enviada com sucesso
+Dado que o usuário está na fila virtual
+E o veículo estiver a menos de 500 metros do ponto
+Quando o sistema detectar a aproximação
+Então uma notificação push deve ser enviada ao usuário
+
+Cenário: Notificação não enviada após embarque
+Dado que o usuário já embarcou
+Quando o sistema processar a posição do veículo
+Então nenhuma notificação deve ser enviada
